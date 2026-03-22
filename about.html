@@ -15,11 +15,12 @@
 </head>
 <body class="subpage about-page">
 
-  <!-- ── Ambient Background ──────────────────────────────── -->
-  <canvas id="bgCanvas" aria-hidden="true"></canvas>
-  <div class="bg-orb bg-orb-1" aria-hidden="true"></div>
-  <div class="bg-orb bg-orb-2" aria-hidden="true"></div>
-  <div class="bg-grid" aria-hidden="true"></div>
+  <!-- ── Ambient Background (Liquid Aurora) ────────────────── -->
+  <div class="ambient-layer" aria-hidden="true">
+    <div class="ambient-shape ambient-shape-1"></div>
+    <div class="ambient-shape ambient-shape-2"></div>
+    <div class="ambient-shape ambient-shape-3"></div>
+  </div>
   <div class="mouse-glow" id="mouseGlow" aria-hidden="true"></div>
 
   <!-- ══════════════════════════════════════════════════════════
@@ -32,6 +33,7 @@
       </a>
 
       <ul class="nav-links" role="list">
+        <div class="nav-indicator" id="navIndicator"></div>
         <li><a href="index.html#features">Leistungen</a></li>
         <li><a href="index.html#examples">Projekte</a></li>
         <li><a href="index.html#contact">Preise</a></li>

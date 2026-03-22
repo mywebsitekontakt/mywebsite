@@ -26,17 +26,12 @@
 </head>
 <body>
 
-  <!-- ── Ambient Background ──────────────────────────────── -->
-  <canvas id="bgCanvas" aria-hidden="true"></canvas>
-
-  <!-- Drifting gradient orbs -->
-  <div class="bg-orb bg-orb-1" aria-hidden="true"></div>
-  <div class="bg-orb bg-orb-2" aria-hidden="true"></div>
-  <div class="bg-orb bg-orb-3" aria-hidden="true"></div>
-  <div class="bg-orb bg-orb-4" aria-hidden="true"></div>
-
-  <!-- Animated grid overlay -->
-  <div class="bg-grid" aria-hidden="true"></div>
+  <!-- ── Ambient Background (Liquid Aurora) ────────────────── -->
+  <div class="ambient-layer" aria-hidden="true">
+    <div class="ambient-shape ambient-shape-1"></div>
+    <div class="ambient-shape ambient-shape-2"></div>
+    <div class="ambient-shape ambient-shape-3"></div>
+  </div>
   
   <!-- Mouse follower spotlight -->
   <div class="mouse-glow" id="mouseGlow" aria-hidden="true"></div>
@@ -52,6 +47,7 @@
       </a>
 
       <ul class="nav-links" role="list">
+        <div class="nav-indicator" id="navIndicator"></div>
         <li><a href="#features">Leistungen</a></li>
         <li><a href="#examples">Projekte</a></li>
         <li><a href="#contact">Preise</a></li>
@@ -169,12 +165,12 @@
       <div class="reveal" style="text-align:center; max-width:840px; margin:0 auto;">
         <div class="section-label">Leistungen</div>
         <div class="toggle-main-heading">
-          <span class="toggle-label-text manual-label" id="label-manual">Workflow</span>
+          <span class="toggle-label-text manual-label" id="label-manual">Andere</span>
           <label class="nexus-switch" for="solutionToggle">
             <input type="checkbox" id="solutionToggle">
             <span class="nexus-slider"></span>
           </label>
-          <span class="toggle-label-text autopilot-label" id="label-autopilot">Autopilot</span>
+          <span class="toggle-label-text autopilot-label" id="label-autopilot">MyWebsite</span>
         </div>
         <p class="section-subtitle" style="margin:24px auto;text-align:center;">
           Vom manuellen Aufwand direkt zum automatisierten Erfolg — unser System spart Ihnen Zeit und Geld.

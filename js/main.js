@@ -40,8 +40,8 @@ const EMAILJS_CONFIG = {
     count: 110,
     maxDist: 150,
     speed: 0.32,
-    baseColorA: '192,132,255',   // light purple
-    baseColorB: '124,77,255',    // mid purple
+    baseColorA: '181,132,255',   // cool purple
+    baseColorB: '123,77,255',    // deep purple
     lineOpacity: 0.1,
     dotOpacity: 0.28,
     dotRadius: 1.3,
@@ -458,23 +458,88 @@ document.head.appendChild(spinStyle);
 /* ────────────────────────────────────────────────────────────
    8. ACTIVE NAV LINK HIGHLIGHT
    ──────────────────────────────────────────────────────────── */
-(function initActiveSections() {
+/* ────────────────────────────────────────────────────────────
+   9. SLIDING NAV INDICATOR (Liquid Glass Slider)
+   ───────────────────────────────────────────────────────────── */
+(function initNavIndicator() {
+  const navContainer = document.querySelector('.nav-links');
+  const links = navContainer ? navContainer.querySelectorAll('a') : [];
+  const indicator = document.getElementById('navIndicator');
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  
+  if (!navContainer || !indicator) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        navLinks.forEach(link => {
-          const active = link.getAttribute('href') === `#${id}`;
-          link.style.color = active ? 'var(--primary-light)' : '';
-        });
+  function move(el, immediate = false) {
+    if (!el) {
+      indicator.style.opacity = '0';
+      return;
+    }
+    const rect = el.getBoundingClientRect();
+    const parentRect = navContainer.getBoundingClientRect();
+    
+    if (immediate) indicator.style.transition = 'none';
+    indicator.style.width = `${rect.width}px`;
+    indicator.style.left = `${rect.left - parentRect.left}px`;
+    indicator.style.top = `${rect.top - parentRect.top}px`;
+    indicator.style.height = `${rect.height}px`;
+    indicator.style.opacity = '1';
+    
+    if (immediate) {
+      // Force reflow
+      indicator.offsetHeight; 
+      indicator.style.transition = '';
+    }
+  }
+
+  // Find the currently "effective" active link (page or scroll)
+  function getActiveLink() {
+    // 1. Check if we are on About page
+    if (window.location.pathname.includes('about.html')) {
+       return Array.from(links).find(l => l.getAttribute('href').includes('about.html'));
+    }
+    // 2. Check scroll sections
+    const scrollPos = window.scrollY + 200;
+    let current = null;
+    sections.forEach(s => {
+      if (scrollPos >= s.offsetTop && scrollPos < s.offsetTop + s.offsetHeight) {
+        current = s.id;
       }
     });
-  }, { threshold: 0.4 });
+    if (current) {
+      return Array.from(links).find(l => l.getAttribute('href').endsWith(`#${current}`));
+    }
+    return null;
+  }
 
-  sections.forEach(s => observer.observe(s));
+  function updateActive() {
+    const activeLink = getActiveLink();
+    links.forEach(l => l.classList.toggle('active', l === activeLink));
+    // When not hovering, the indicator stays on the active link
+    if (!navContainer.matches(':hover')) {
+      move(activeLink);
+    }
+  }
+
+  // Hover effects
+  links.forEach(link => {
+    link.addEventListener('mouseenter', () => move(link));
+  });
+
+  navContainer.addEventListener('mouseleave', () => {
+    move(getActiveLink());
+  });
+
+  // Scroll & Resize events
+  window.addEventListener('scroll', () => {
+    const active = getActiveLink();
+    links.forEach(l => l.classList.toggle('active', l === active));
+    if (!navContainer.matches(':hover')) move(active);
+  });
+  
+  window.addEventListener('resize', () => move(getActiveLink()));
+
+  // Initial position
+  setTimeout(() => move(getActiveLink(), true), 100);
 })();
 
 
