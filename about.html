@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <!-- Stylesheet (Same as main site) -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=2.0" />
 </head>
 <body class="subpage about-page">
 
@@ -54,55 +54,87 @@
     <div class="container" style="padding-top: 120px;">
       
       <div class="reveal" style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 80px;">
-        <div class="section-label">Unsere Story</div>
-        <h1 class="hero-title">Leidenschaft für <span class="purple">Webdesign</span></h1>
-        <p class="section-subtitle">
+        <div class="section-label">Our Story</div>
+        <h1 class="hero-title" style="margin-top:20px;">Passion for <span class="purple">Digital Excellence</span></h1>
+        <p class="section-subtitle" style="margin: 20px auto 0;">
           Wir sind nicht nur eine Agentur. Wir sind Ihr Partner beim Aufbau einer 
           digitalen Identität, die Eindruck hinterlässt und Ergebnisse liefert.
         </p>
       </div>
 
-      <div class="glass-card reveal reveal-delay-2" style="padding: 60px; margin-bottom: 60px;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-          <div>
-            <h2 style="font-size: 2rem; margin-bottom: 24px; color: #fff;">Wer wir sind</h2>
-            <p style="color: var(--secondary); line-height: 1.8; margin-bottom: 20px;">
-              Gegründet mit der Vision, kleinen Unternehmen den Zugang zu professionellem High-End-Design zu ermöglichen, 
-              kombiniert MyWebsite Kreativität mit modernster Technologie.
+      <!-- Main Story Card -->
+      <div class="glass-card reveal reveal-delay-2" style="overflow: hidden; margin-bottom: 80px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch;">
+          
+          <div style="padding: 60px;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 24px; color: #fff; letter-spacing: -0.02em;">Wer wir sind</h2>
+            <p style="color: var(--secondary); line-height: 1.8; margin-bottom: 24px;">
+              Gegründet mit einer klaren Vision: Kleinen Unternehmen den Zugang zu professionellem High-End-Design zu ermöglichen, das sonst nur Großkonzernen vorbehalten war. <strong>MyWebsite</strong> verbindet handwerkliche Kreativität mit modernster Technologie – und liefert Ergebnisse, die messbar sind.
             </p>
-            <p style="color: var(--secondary); line-height: 1.8;">
-              Unser Team besteht aus leidenschaftlichen Designern und Entwicklern, die jedes Projekt als Chance sehen, 
-              etwas Einzigartiges zu schaffen. Wir glauben an Transparenz, Schnelligkeit und kompromisslose Qualität.
+            <p style="color: var(--secondary); line-height: 1.8; margin-bottom: 0;">
+              Unser Team aus Designern und Entwicklern sieht jedes Projekt als Chance, etwas zu bauen, das wirklich zählt. Wir glauben nicht an Kompromisse. Wir glauben an Transparenz, Geschwindigkeit und Qualität, die für sich spricht.
             </p>
           </div>
-          <div style="background: rgba(124,77,255,0.05); border: 1px solid rgba(124,77,255,0.1); border-radius: 20px; padding: 40px; text-align: center;">
-             <div class="feature-icon" style="margin: 0 auto 24px auto;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-             </div>
-             <h3 style="color:#fff; margin-bottom: 12px;">Unsere Mission</h3>
-             <p style="font-size: 0.9rem; color: var(--secondary);">Websites zu bauen, die nicht nur schön aussehen, sondern Ihr Geschäft messbar voranbringen.</p>
+
+          <!-- Team Visualization -->
+          <div style="position: relative; background: rgba(255,255,255,0.03); min-height: 400px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(124,77,255,0.1) 0%, transparent 100%);"></div>
+            
+            <!-- Graphic Element representing the team -->
+            <div style="text-align: center; z-index: 1; padding: 40px;">
+               <div style="width: 100px; height: 100px; background: var(--grad-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; box-shadow: 0 0 40px rgba(124,77,255,0.4); border: 2px solid rgba(255,255,255,0.2);">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+               </div>
+               <h3 style="color:#fff; font-size: 1.4rem; margin-bottom: 12px; font-weight: 800;">Das Team</h3>
+               <p style="font-size: 0.9rem; color: var(--secondary); max-width: 260px; margin: 0 auto; line-height: 1.6;">
+                 Vier Experten, ein Ziel: Perfektion am Nano Banana Pro.
+               </p>
+            </div>
+            
+            <div style="position: absolute; bottom: 30px; right: 30px; background: var(--glass-bg); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); padding: 12px 24px; border-radius: 50px; border: 1px solid var(--glass-border); font-size: 0.8rem; color: #fff; font-weight: 700; letter-spacing: 0.05em; box-shadow: var(--shadow);">
+              #DigitalExcellence
+            </div>
           </div>
         </div>
+      </div>
+
+      <!-- Mission Section -->
+      <div style="text-align: center; margin-bottom: 120px;" class="reveal reveal-delay-3">
+        <div style="width: 72px; height: 72px; background: var(--glass-bg); border-radius: 20px; border: 1px solid var(--glass-border); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; color: var(--primary-light); box-shadow: var(--shadow), var(--glass-glow);">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+        </div>
+        <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 24px;">Unsere <span class="purple">Mission</span></h2>
+        <p style="font-size: 1.2rem; color: var(--secondary); max-width: 700px; margin: 0 auto; line-height: 1.8;">
+          Websites zu bauen, die nicht nur schön aussehen – sondern Ihr Geschäft <strong>aktiv voranbringen</strong> und echte Ergebnisse liefern.
+        </p>
       </div>
 
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ══════════════════════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════════════════════ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
         <div class="footer-logo">My<span>Website</span></div>
         <p class="footer-center">&copy; 2026 MyWebsite. Alle Rechte vorbehalten.</p>
-        <a class="footer-email" href="mailto:mywebsite.kontakt@gmail.com">
+        <a class="footer-email" href="mailto:mywebsite.kontakt@gmail.com" aria-label="E-Mail senden">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
           mywebsite.kontakt@gmail.com
         </a>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2.0"></script>
 </body>
 </html>
