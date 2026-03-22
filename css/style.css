@@ -795,6 +795,16 @@ ul { list-style: none; }
 .toggle-label-text {
   transition: all var(--transition);
   opacity: 0.35;
+  flex: 1; /* Automatically balance space */
+  min-width: 120px;
+}
+
+.manual-label {
+  text-align: right;
+}
+
+.autopilot-label {
+  text-align: left;
 }
 
 .toggle-label-text.active {
