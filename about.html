@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Erfahren Sie mehr über MyWebsite – Ihr Partner für professionelles Webdesign." />
+  <title>About Us — MyWebsite</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Stylesheet (Same as main site) -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="subpage about-page">
+
+  <!-- ── Ambient Background ──────────────────────────────── -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+  <div class="bg-orb bg-orb-1" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb-2" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="mouse-glow" id="mouseGlow" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       NAVIGATION
+       ══════════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a class="nav-logo" href="index.html">
+        My<span>Website</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html#features">Leistungen</a></li>
+        <li><a href="index.html#examples">Projekte</a></li>
+        <li><a href="index.html#contact">Preise</a></li>
+        <li><a href="about.html" style="color:var(--primary-light)">Über uns</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="index.html#contact">Starten</a>
+        <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════════
+       ABOUT HERO
+       ══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container" style="padding-top: 120px;">
+      
+      <div class="reveal" style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 80px;">
+        <div class="section-label">Unsere Story</div>
+        <h1 class="hero-title">Leidenschaft für <span class="purple">Webdesign</span></h1>
+        <p class="section-subtitle">
+          Wir sind nicht nur eine Agentur. Wir sind Ihr Partner beim Aufbau einer 
+          digitalen Identität, die Eindruck hinterlässt und Ergebnisse liefert.
+        </p>
+      </div>
+
+      <div class="glass-card reveal reveal-delay-2" style="padding: 60px; margin-bottom: 60px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+          <div>
+            <h2 style="font-size: 2rem; margin-bottom: 24px; color: #fff;">Wer wir sind</h2>
+            <p style="color: var(--secondary); line-height: 1.8; margin-bottom: 20px;">
+              Gegründet mit der Vision, kleinen Unternehmen den Zugang zu professionellem High-End-Design zu ermöglichen, 
+              kombiniert MyWebsite Kreativität mit modernster Technologie.
+            </p>
+            <p style="color: var(--secondary); line-height: 1.8;">
+              Unser Team besteht aus leidenschaftlichen Designern und Entwicklern, die jedes Projekt als Chance sehen, 
+              etwas Einzigartiges zu schaffen. Wir glauben an Transparenz, Schnelligkeit und kompromisslose Qualität.
+            </p>
+          </div>
+          <div style="background: rgba(124,77,255,0.05); border: 1px solid rgba(124,77,255,0.1); border-radius: 20px; padding: 40px; text-align: center;">
+             <div class="feature-icon" style="margin: 0 auto 24px auto;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+             </div>
+             <h3 style="color:#fff; margin-bottom: 12px;">Unsere Mission</h3>
+             <p style="font-size: 0.9rem; color: var(--secondary);">Websites zu bauen, die nicht nur schön aussehen, sondern Ihr Geschäft messbar voranbringen.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">My<span>Website</span></div>
+        <p class="footer-center">&copy; 2026 MyWebsite. Alle Rechte vorbehalten.</p>
+        <a class="footer-email" href="mailto:mywebsite.kontakt@gmail.com">
+          mywebsite.kontakt@gmail.com
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

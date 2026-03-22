@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MyWebsite – Professionelles Webdesign für kleine Unternehmen. Moderne, schnelle und hochkonvertierende Websites zum fairen Preis." />
+  <meta name="keywords" content="Webdesign, Website erstellen, moderne Website, kleine Unternehmen, günstiges Webdesign" />
+  <meta property="og:title" content="MyWebsite — Professionelles Webdesign" />
+  <meta property="og:description" content="Wir bauen die Zukunft Ihres Unternehmens. Moderne, schnelle Websites für kleine Unternehmen." />
+  <meta property="og:type" content="website" />
+  <title>MyWebsite — Professionelles Webdesign</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- EmailJS SDK (lädt asynchron) -->
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    defer
+  ></script>
+</head>
+<body>
+
+  <!-- ── Ambient Background ──────────────────────────────── -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+  <!-- Drifting gradient orbs -->
+  <div class="bg-orb bg-orb-1" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb-2" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb-3" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb-4" aria-hidden="true"></div>
+
+  <!-- Animated grid overlay -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  
+  <!-- Mouse follower spotlight -->
+  <div class="mouse-glow" id="mouseGlow" aria-hidden="true"></div>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       NAVIGATION
+       ══════════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" aria-label="Hauptnavigation">
+    <div class="container">
+      <a class="nav-logo" href="#" aria-label="MyWebsite – Startseite">
+        My<span>Website</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#features">Leistungen</a></li>
+        <li><a href="#examples">Projekte</a></li>
+        <li><a href="#contact">Preise</a></li>
+        <li><a href="about.html">Über uns</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="#contact" id="nav-cta">Starten</a>
+        <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
+    <a href="#features">Leistungen</a>
+    <a href="#examples">Projekte</a>
+    <a href="#contact">Preise</a>
+    <a href="about.html">Über uns</a>
+    <a class="btn btn-primary" href="#contact" style="margin-top:24px;">Starten</a>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       HERO SECTION
+       ══════════════════════════════════════════════════════════ -->
+  <section class="hero" id="home" aria-labelledby="hero-heading">
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero-inner">
+
+        <!-- Left: Copy -->
+        <div class="hero-copy">
+          <div class="hero-badge reveal">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true" style="opacity:0.85">
+              <path d="M6 0 L7.2 4.8 L12 6 L7.2 7.2 L6 12 L4.8 7.2 L0 6 L4.8 4.8 Z"/>
+            </svg>
+            <span class="hero-badge-text">Premium Webdesign</span>
+          </div>
+
+          <h1 class="hero-title reveal reveal-delay-1" id="hero-heading">
+            Die Zukunft Ihres<br>
+            <span class="purple">Business</span>
+          </h1>
+
+          <p class="hero-subtitle reveal reveal-delay-2">
+            Wir gestalten moderne, schnelle und hochkonvertierende Websites
+            für kleine Unternehmen — damit Ihre Online-Präsenz wirklich beeindruckt.
+          </p>
+
+          <div class="hero-actions reveal reveal-delay-3">
+            <a class="btn btn-primary" href="#contact" id="hero-cta-primary">
+              Jetzt starten &rarr;
+            </a>
+            <a class="btn btn-secondary" href="#examples" id="hero-cta-secondary">
+              Referenzen
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Floating UI Mockup -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-mockup reveal reveal-delay-2">
+            <div class="mockup-bar">
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+              <div class="mockup-url">mywebsite.de</div>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-hero-bar"></div>
+              <div class="mockup-sub-bar"></div>
+              <div class="mockup-sub-bar short"></div>
+              <div class="mockup-cards">
+                <div class="mockup-card-item"><div class="mini-icon"></div></div>
+                <div class="mockup-card-item"><div class="mini-icon"></div></div>
+                <div class="mockup-card-item"><div class="mini-icon"></div></div>
+                <div class="mockup-card-item"><div class="mini-icon"></div></div>
+              </div>
+              <div class="mockup-btn-row">
+                <div class="mockup-btn-pill"></div>
+                <div class="mockup-btn-pill outline"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <svg width="16" height="24" viewBox="0 0 16 24" fill="none">
+        <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+        <rect x="6.5" y="5" width="3" height="6" rx="1.5" fill="currentColor" opacity="0.6">
+          <animate attributeName="y" values="5;10;5" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2s" repeatCount="indefinite"/>
+        </rect>
+      </svg>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       FEATURES — What We Do
+       ══════════════════════════════════════════════════════════ -->
+  <section class="section features" id="features" aria-labelledby="features-heading">
+    <div class="container">
+
+      <div class="reveal" style="text-align:center; max-width:840px; margin:0 auto;">
+        <div class="section-label">Leistungen</div>
+        <div class="toggle-main-heading">
+          <span class="toggle-label-text manual-label" id="label-manual">Workflow</span>
+          <label class="nexus-switch" for="solutionToggle">
+            <input type="checkbox" id="solutionToggle">
+            <span class="nexus-slider"></span>
+          </label>
+          <span class="toggle-label-text autopilot-label" id="label-autopilot">Autopilot</span>
+        </div>
+        <p class="section-subtitle" style="margin:24px auto;text-align:center;">
+          Vom manuellen Aufwand direkt zum automatisierten Erfolg — unser System spart Ihnen Zeit und Geld.
+        </p>
+      </div>
+
+      <!-- Toggleable Solutions Display -->
+      <div class="solutions-container reveal reveal-delay-2" id="solutionsDisplay">
+        
+        <!-- Workflow Set (Manual) -->
+        <div class="solutions-set" id="manual-set">
+          <div class="glass-card solution-item">
+            <div class="solution-status status-pending">Wartezeit</div>
+            <div class="solution-info">
+              <h4 class="solution-item-title">Wochenlange Entwicklung</h4>
+              <p class="solution-item-desc">Mühsame manuelle Abstimmungen und lange Wartezeiten, bis Ihre Seite endlich online ist.</p>
+            </div>
+            <div class="solution-tag">Mühsam</div>
+          </div>
+          <div class="glass-card solution-item">
+            <div class="solution-status status-pending">Design</div>
+            <div class="solution-info">
+              <h4 class="solution-item-title">Standard-Konzepte</h4>
+              <p class="solution-item-desc">Verwendung von Vorlagen, die nach "von der Stange" aussehen und Ihre Marke nicht hervorheben.</p>
+            </div>
+            <div class="solution-tag">Standard</div>
+          </div>
+          <div class="glass-card solution-item">
+            <div class="solution-status status-pending">Technik</div>
+            <div class="solution-info">
+              <h4 class="solution-item-title">Fehlende Optimierung</h4>
+              <p class="solution-item-desc">Veraltete Methoden, die weder SEO-freundlich noch schnell sind — Ihre Kunden warten zu lange.</p>
+            </div>
+            <div class="solution-tag">Langsam</div>
+          </div>
+        </div>
+
+        <!-- Autopilot Set (Positive) -->
+        <div class="solutions-set solution-set-hidden" id="autopilot-set">
+          <div class="glass-card solution-item highlight">
+            <div class="solution-status status-complete">Fertig</div>
+            <div class="solution-info">
+              <h4 class="solution-item-title">Live in Rekordzeit</h4>
+              <p class="solution-item-desc">Ihr Business geht innerhalb weniger Tage online — keine langen Prozesse, volle Power.</p>
+            </div>
+            <div class="solution-tag tag-success">Schnell</div>
+          </div>
+          <div class="glass-card solution-item highlight">
+            <div class="solution-status status-complete">Optimal</div>
+            <div class="solution-info">
+              <h4 class="solution-item-title">Premium Design</h4>
+              <p class="solution-item-desc">Einzigartige Ästhetik, die exakt auf Ihre Zielgruppe zugeschnitten ist und sofort vertrauen weckt.</p>
+            </div>
+            <div class="solution-tag tag-success">Premium</div>
+          </div>
+          <div class="glass-card solution-item highlight">
+            <div class="solution-status status-complete">Perfekt</div>
+            <div class="solution-info">
+              <h4 class="solution-item-title">Top Technik</h4>
+              <p class="solution-item-desc">Blitzschnelles Laden, Top-SEO Ranking und perfekte Darstellung auf allen Geräten.</p>
+            </div>
+            <div class="solution-tag tag-success">Modern</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       EXAMPLES / PORTFOLIO
+       ══════════════════════════════════════════════════════════ -->
+  <section class="section examples" id="examples" aria-labelledby="examples-heading">
+    <div class="container">
+
+      <div class="examples-header">
+        <div class="reveal">
+          <div class="section-label">Referenzen</div>
+          <h2 class="section-title" id="examples-heading">Unsere <span>Arbeit</span></h2>
+        </div>
+        <a class="btn btn-secondary reveal reveal-delay-1" href="#contact">
+          Jetzt anfragen &rarr;
+        </a>
+      </div>
+
+      <div class="browser-window reveal reveal-delay-2">
+        <div class="browser-chrome">
+          <span class="browser-dot red"   aria-hidden="true"></span>
+          <span class="browser-dot yellow" aria-hidden="true"></span>
+          <span class="browser-dot green"  aria-hidden="true"></span>
+
+          <div class="browser-url">
+            <svg width="10" height="12" viewBox="0 0 10 12" fill="none" aria-hidden="true">
+              <path d="M5 1C3.067 1 1.5 2.567 1.5 4.5c0 3 3.5 6.5 3.5 6.5s3.5-3.5 3.5-6.5C8.5 2.567 6.933 1 5 1Z" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="5" cy="4.5" r="1" fill="currentColor"/>
+            </svg>
+            <span id="browserUrl">tsv1886-fussball.de</span>
+          </div>
+
+          <div class="browser-actions" aria-hidden="true">
+            <button id="browserReload" title="Aktualisieren" aria-label="Seite neu laden">↺</button>
+            <button id="browserFullscreen" title="Vollbild" aria-label="Vollbild öffnen">⛶</button>
+            <button id="browserClose" title="Vollbild beenden" aria-label="Vollbild beenden" style="display:none">✕</button>
+          </div>
+        </div>
+
+        <div class="browser-body">
+          <!-- Interaction Overlay — blocks scroll when scrolling parent fast -->
+          <div class="browser-interaction-overlay" id="browserOverlay">
+             <div class="interaction-hint">Klicken zum Interagieren</div>
+          </div>
+
+          <!-- Scale-wrapper: renders at 1440px desktop width, then CSS-scaled down -->
+          <div class="iframe-scale-wrap" id="iframeScaleWrap">
+
+            <iframe
+              id="previewFrame"
+              src="https://tsv1886-fussball.de"
+              title="Beispiel-Website: TSV 1886 Fußball"
+              loading="lazy"
+            ></iframe>
+
+            <!-- Fallback if X-Frame-Options blocks the iframe -->
+            <div class="iframe-blocked" id="iframeBlocked">
+              <div class="iframe-blocked-inner">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary-light);margin-bottom:16px;">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+                <p style="font-weight:700;color:var(--text-on-bg);margin-bottom:8px;">Vorschau nicht verfügbar</p>
+                <p style="font-size:0.82rem;color:var(--secondary);margin-bottom:20px;max-width:340px;text-align:center;">Diese Website verhindert die Einbettung per iframe. Du kannst sie direkt besuchen:</p>
+                <a href="https://tsv1886-fussball.de" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.85rem;padding:11px 24px;">
+                  In neuem Tab öffnen &rarr;
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       CONTACT SECTION
+       ══════════════════════════════════════════════════════════ -->
+  <section class="section contact" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-inner">
+
+        <!-- Left: info -->
+        <div class="contact-info reveal">
+          <div class="section-label">Kontakt</div>
+          <h2 class="section-title" id="contact-heading">
+            Let's Build Your<br><span>Website</span>
+          </h2>
+          <p class="section-subtitle">
+            Erzählen Sie uns, was Sie brauchen — wir kümmern uns um den Rest.
+          </p>
+
+          <div class="contact-extras">
+            <div class="contact-extra-item">
+              <div class="contact-extra-icon" aria-hidden="true">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <span>mywebsite.kontakt@gmail.com</span>
+            </div>
+            <div class="contact-extra-item">
+              <div class="contact-extra-icon" aria-hidden="true">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+              </div>
+              <span>Antwort innerhalb von 24 Stunden</span>
+            </div>
+            <div class="contact-extra-item">
+              <div class="contact-extra-icon" aria-hidden="true">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <span>Unverbindliche Erstberatung — kostenlos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="glass-card contact-form-wrap reveal reveal-delay-2">
+          <form id="contactForm" novalidate aria-label="Kontaktformular">
+
+            <div class="form-group">
+              <label class="form-label" for="email">Ihre E-Mail-Adresse *</label>
+              <input
+                class="form-control"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="name@ihrunternehmen.de"
+                required
+                autocomplete="email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="budget">Budget *</label>
+              <select class="form-control" id="budget" name="budget" required>
+                <option value="" disabled selected>Budget wählen…</option>
+                <option value="unter 300€">Unter 300 €</option>
+                <option value="300–500€">300 – 500 €</option>
+                <option value="500–800€">500 – 800 €</option>
+                <option value="800€+">800 € +</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Was benötigen Sie? *</label>
+              <textarea
+                class="form-control"
+                id="message"
+                name="message"
+                placeholder="Beschreiben Sie Ihr Projekt kurz…"
+                required
+              ></textarea>
+            </div>
+
+            <button class="btn btn-primary form-submit" type="submit" id="form-submit-btn">
+              Anfrage senden &rarr;
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">My<span>Website</span></div>
+        <p class="footer-center">&copy; 2026 MyWebsite. Alle Rechte vorbehalten.</p>
+        <a class="footer-email" href="mailto:mywebsite.kontakt@gmail.com" aria-label="E-Mail senden">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          mywebsite.kontakt@gmail.com
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Main Script -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
